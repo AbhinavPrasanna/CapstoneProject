@@ -1,0 +1,100 @@
+.FormTypography{
+    font-family: Roboto;
+    font-size: 17.281px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 17.281px */
+    letter-spacing: 0.432px;
+}
+
+
+.FormLayout{
+    width: 388.249px;
+    height: 65.668px;
+}
+
+.UsernameStyle{
+    border-radius: 11.521px;
+    height: 40px;
+    width:200px;
+    border: 1.152px solid #2622E7;
+    background: #FAFAFA;
+    margin-left: 1100px;
+
+}
+
+.PasswordStyle{
+    border-radius: 11.521px;
+    height: 40px;
+    width:200px;
+    border: 1.152px solid #2622E7;
+    background: #FAFAFA;
+    margin-left: 1100px;
+    margin-top:50px;
+}
+
+.FirstNameStyle{
+    border-radius: 11.521px;
+    height: 40px;
+    width:200px;
+    border: 1.152px solid #2622E7;
+    background: #FAFAFA;
+    margin-left: 1100px;
+    margin-top:50px;
+}
+
+.LastNameStyle{
+    border-radius: 11.521px;
+    height: 40px;
+    width:200px;
+    border: 1.152px solid #2622E7;
+    background: #FAFAFA;
+    margin-left: 1100px;
+    margin-top:50px;
+}
+
+
+.SubmitTextLayout{
+    display: flex;
+    width: 133px;
+    height: 68px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.SubmitTextTypography{
+    color: #FFF;
+    text-align: center;
+    font-family: Baloo 2;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 24px */
+    letter-spacing: 0.6px;
+}
+
+.SubmitButtonLayout{
+    width: 138px;
+    height: 68px;
+    flex-shrink: 0;
+}
+
+.SubmitButtonStyle{
+    width: 108px;
+    height: 50px;
+    border-radius: 11.521px;
+    background: #2622E7;
+    margin-left: 1200px;
+    margin-top:50px;
+}
+.SubmitButtonTypography{
+    color: #FFF;
+    text-align: center;
+    font-family: Baloo 2;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 24px */
+    letter-spacing: 0.6px;
+}
