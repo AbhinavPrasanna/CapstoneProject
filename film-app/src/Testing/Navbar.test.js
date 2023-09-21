@@ -14,7 +14,6 @@ test('Navbar contains the CINEMANIA logo', () => {
     const logoElement = getByText('CINEMANIA');
     expect(logoElement).toBeInTheDocument();
   });
-  
   test('Navbar contains Sign Up button', () => {
     const { getByText } = render(
         <Router>
@@ -34,7 +33,6 @@ test('Navbar contains the CINEMANIA logo', () => {
     const loginButton = getByText('Login');
     expect(loginButton).toBeInTheDocument();
   });
-
   test('Navbar goes to Sign Up Screen', () => {
         const { getByText} = render(
           <Router>
