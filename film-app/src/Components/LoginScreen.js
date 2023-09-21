@@ -15,7 +15,7 @@ function LoginScreen() {
        <input type="text" data-testid="input-login-password"className='PasswordStyle FormTypography' placeholder='Password' style={{textAlign:'center'}}/>
       </a>
       <a className='SubmitButtonLayout'>
-        <button className='SubmitButtonStyle SubmitButtonTypography' type="button">
+        <button data-testid="login-submitbutton" className='SubmitButtonStyle SubmitButtonTypography' type="button">
           Submit
         </button>
       </a>

@@ -21,7 +21,7 @@ function SignUpScreen() {
        <input type="text" data-testid='input-signup-password' className='PasswordStyle FormTypography' placeholder='Password' style={{textAlign:'center'}}/>
       </a>
       <a className='SubmitButtonLayout'>
-        <button className='SubmitButtonStyle SubmitButtonTypography' type="button">
+        <button data-testid="signup-submitbutton" className='SubmitButtonStyle SubmitButtonTypography' type="button">
           Submit
         </button>
       </a>

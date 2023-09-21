@@ -56,6 +56,9 @@ test('Navbar contains the CINEMANIA logo', () => {
         expect(signUpLastName).toBeInTheDocument();
         const signUpPassword = screen.getByTestId('input-signup-password');
         expect(signUpPassword).toBeInTheDocument();
+        const signUpSubmitButton = screen.getByTestId('signup-submitbutton');
+        expect(signUpSubmitButton).toBeInTheDocument();
+
 });
 
 test('Navbar goes to Login In Screen', () => {
@@ -67,14 +70,16 @@ test('Navbar goes to Login In Screen', () => {
         </Routes>
       </Router>
     );
-    const signUpButton = getByText('Login');
-    fireEvent.click(signUpButton);
-    const signUpScreen = getByText('LOGIN');
-    expect(signUpScreen).toBeInTheDocument();
-    const signUpEmail = screen.getByTestId('input-login-username');
-    expect(signUpEmail).toBeInTheDocument();
-    const signUpPassword = screen.getByTestId('input-login-password');
-    expect(signUpPassword).toBeInTheDocument();
+    const loginButton = getByText('Login');
+    fireEvent.click(loginButton);
+    const loginScreen = getByText('LOGIN');
+    expect(loginScreen).toBeInTheDocument();
+    const loginEmail = screen.getByTestId('input-login-username');
+    expect(loginEmail).toBeInTheDocument();
+    const loginPassword = screen.getByTestId('input-login-password');
+    expect(loginPassword).toBeInTheDocument();
+    const loginSubmitButton = screen.getByTestId('login-submitbutton');
+    expect(loginSubmitButton).toBeInTheDocument();
 });
        
 
