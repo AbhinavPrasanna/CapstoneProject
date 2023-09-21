@@ -9,13 +9,13 @@ function LoginScreen() {
       <span className="LogoTextTypography">LOGIN</span>
      </a>
       <a className='FormLayout'>
-       <input className='UsernameStyle FormTypography' placeholder='Email' style={{textAlign:'center'}}/>
+       <input type="text" data-testid="input-login-username"className='UsernameStyle FormTypography' placeholder='Email' style={{textAlign:'center'}}/>
       </a>
       <a className='FormLayout'>
-       <input className='PasswordStyle FormTypography' placeholder='Password' style={{textAlign:'center'}}/>
+       <input type="text" data-testid="input-login-password"className='PasswordStyle FormTypography' placeholder='Password' style={{textAlign:'center'}}/>
       </a>
       <a className='SubmitButtonLayout'>
-        <button className='SubmitButtonStyle SubmitButtonTypography' type="button">
+        <button data-testid="login-submitbutton" className='SubmitButtonStyle SubmitButtonTypography' type="button">
           Submit
         </button>
       </a>

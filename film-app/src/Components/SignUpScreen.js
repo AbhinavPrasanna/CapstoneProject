@@ -9,19 +9,19 @@ function SignUpScreen() {
       <span className="LogoTextTypography">SIGN UP</span>
      </a>
       <a className='FormLayout'>
-       <input className='UsernameStyle FormTypography' placeholder='Email' style={{textAlign:'center'}}/>
+       <input type="text" data-testid = 'input-signup-username' className='UsernameStyle FormTypography' placeholder='Email' style={{textAlign:'center'}}/>
       </a>
       <a className='FormLayout'>
-        <input className= 'FirstNameStyle FormTypography' placeholder='First Name' style={{textAlign:'center'}} />
+        <input type="text" data-testid = 'input-signup-firstname' className= 'FirstNameStyle FormTypography' placeholder='First Name' style={{textAlign:'center'}} />
       </a>
       <a className='FormLayout'>
-        <input className= 'LastNameStyle FormTypography' placeholder='Last Name' style={{textAlign:'center'}} />
+        <input type="text" data-testid='input-signup-lastname' className= 'LastNameStyle FormTypography' placeholder='Last Name' style={{textAlign:'center'}} />
       </a>
       <a className='FormLayout'>
-       <input className='PasswordStyle FormTypography' placeholder='Password' style={{textAlign:'center'}}/>
+       <input type="text" data-testid='input-signup-password' className='PasswordStyle FormTypography' placeholder='Password' style={{textAlign:'center'}}/>
       </a>
       <a className='SubmitButtonLayout'>
-        <button className='SubmitButtonStyle SubmitButtonTypography' type="button">
+        <button data-testid="signup-submitbutton" className='SubmitButtonStyle SubmitButtonTypography' type="button">
           Submit
         </button>
       </a>
