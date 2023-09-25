@@ -11,6 +11,7 @@
 .FormLayout{
     width: 388.249px;
     height: 65.668px;
+    z-index: 10;
 }
 
 .UsernameStyle{
@@ -19,8 +20,8 @@
     width:200px;
     border: 1.152px solid #2622E7;
     background: #FAFAFA;
-    margin-left: 1100px;
-
+    margin-left: 75%;
+    margin-top:1%;
 }
 
 .PasswordStyle{
@@ -29,8 +30,8 @@
     width:200px;
     border: 1.152px solid #2622E7;
     background: #FAFAFA;
-    margin-left: 1100px;
-    margin-top:50px;
+    margin-left: 75%;
+    margin-top:4%;
 }
 
 .FirstNameStyle{
@@ -39,8 +40,8 @@
     width:200px;
     border: 1.152px solid #2622E7;
     background: #FAFAFA;
-    margin-left: 1100px;
-    margin-top:50px;
+    margin-left: 75%;
+    margin-top:4%;
 }
 
 .LastNameStyle{
@@ -49,8 +50,8 @@
     width:200px;
     border: 1.152px solid #2622E7;
     background: #FAFAFA;
-    margin-left: 1100px;
-    margin-top:50px;
+    margin-left:75%;
+    margin-top:4%;
 }
 
 
@@ -85,8 +86,8 @@
     height: 50px;
     border-radius: 11.521px;
     background: #2622E7;
-    margin-left: 1200px;
-    margin-top:50px;
+    margin-left: 82%;
+    margin-top:4%;
 }
 .SubmitButtonTypography{
     color: #FFF;

@@ -2,7 +2,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding:20px;
+  height: 20%;
+  padding:2%;
   display:flex;
 }
 
@@ -17,8 +18,8 @@
     width: 214px;
     height: 84px;
     flex-shrink: 0;
-    margin-left: 550px;
-    padding-bottom:200px ;
+    margin-left: 35%;
+    padding-top:0% ;
 }
 .SignUpButtonStyle{
     width: 108px;
