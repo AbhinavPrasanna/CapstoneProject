@@ -36,7 +36,7 @@ function LoginScreen() {
     e.preventDefault();//Add tests for this function
     signInWithEmailAndPassword(auth,username,password)
     .then(() => {
-      console.log('Signed In')
+      console.log("Logged in");
      })
    .catch((error) => {
      console.log(error);
