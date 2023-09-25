@@ -15,7 +15,6 @@ function SignUpScreen() {
   const [isValidLastName, setIsValidLastName] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
   const [isValidForm,setIsValidForm] = useState(false);
-  const [isSignedUp, setIsSignedUp] = useState(false);
  
   useEffect(() => {
     if(isValidUsername && isValidFirstName && isValidLastName && isValidPassword){
