@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import { validEmail, validPassword } from '../utils/Regex';
 import {auth} from '../utils/Firebase.js';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword , } from 'firebase/auth';
+import { useAuth } from '../Context/AuthContext';
 import './Stylesheets/Logos.css'
 import './Stylesheets/FormSubmission.css'
 
@@ -11,6 +12,8 @@ function LoginScreen() {
   const [isValidUsername, setIsValidUsername] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
   const [isValidForm,setIsValidForm] = useState(false);
+
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn, authUsers, setAuthUsers} = useAuth();
 
   useEffect(() => {
     if(isValidUsername  && isValidPassword){
@@ -36,8 +39,9 @@ function LoginScreen() {
     e.preventDefault();//Add tests for this function
     signInWithEmailAndPassword(auth,username,password)
     .then(() => {
-      console.log("Logged in");
-     })
+      setAuthUser(authUsers.findUser(username));
+      setIsLoggedIn(true);
+    })
    .catch((error) => {
      console.log(error);
    })

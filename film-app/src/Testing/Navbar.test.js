@@ -4,6 +4,18 @@ import Navbar from '../Components/Navbar';
 import { render,fireEvent, queryByTestId, screen } from '@testing-library/react';
 import SignUpScreen from '../Components/SignUpScreen';
 import LoginScreen from '../Components/LoginScreen';
+jest.mock('../Context/AuthContext', () => ({
+  useAuth: () => ({
+    authUser: null, // Mocked authUser
+    setAuthUser: jest.fn(),
+    isLoggedIn: false, // Mocked isLoggedIn
+    setIsLoggedIn: jest.fn(),
+    authUsers: [], // Mocked authUsers as an empty array
+    setAuthUsers: jest.fn(),
+  }),
+}));
+
+
 
 test('Navbar contains the CINEMANIA logo', () => {
     const { getByText } = render(
@@ -42,6 +54,7 @@ test('Navbar contains the CINEMANIA logo', () => {
             </Routes>
           </Router>
         );
+        
         const signUpButton = getByText('Sign Up');
         fireEvent.click(signUpButton);
         const signUpScreen = getByText('SIGN UP');
