@@ -3,6 +3,18 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import { render,fireEvent,screen } from '@testing-library/react';
 import LoginScreen from '../Components/LoginScreen';
 
+jest.mock('../Context/AuthContext', () => ({
+    useAuth: () => ({
+      authUser: null, // Mocked authUser
+      setAuthUser: jest.fn(),
+      isLoggedIn: false, // Mocked isLoggedIn
+      setIsLoggedIn: jest.fn(),
+      authUsers: [], // Mocked authUsers as an empty array
+      setAuthUsers: jest.fn(),
+    }),
+  }));
+
+
 const correctuser ={
     username: 'abhinav2k01@gmail.com',
     firstname: 'Abhinav',
@@ -110,6 +122,24 @@ test('Login Screen shows disabled when the form is invalid with incorrect passwo
     expect(loginSubmitButton).toBeDisabled();
 });
 test('Login Screen shows disabled when the form is invalid with incorrect email', () => {
+    const {getByText} = render(
+        <Router>
+            <LoginScreen />
+        </Router>
+    );
+    const loginEmail = screen.getByTestId('input-login-username');
+    expect(loginEmail).toBeInTheDocument();
+    const loginPassword = screen.getByTestId('input-login-password');
+    expect(loginPassword).toBeInTheDocument();
+    fireEvent.change(loginPassword, {target: {value: correctuser.password}});
+    const isHidden = loginPassword.type === 'password';
+    expect(isHidden).toBeTruthy();
+    const loginSubmitButton = screen.getByTestId('login-submitbutton');
+    expect(loginSubmitButton).toBeInTheDocument();
+    expect(loginSubmitButton).toBeDisabled();
+});
+
+test('Login Sign Up Connection if successful should generate correct Auth User Values', () => {
     const {getByText} = render(
         <Router>
             <LoginScreen />

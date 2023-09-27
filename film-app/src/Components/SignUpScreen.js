@@ -4,6 +4,8 @@ import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {auth} from '../utils/Firebase.js';
 import './Stylesheets/Logos.css'
 import './Stylesheets/FormSubmission.css'
+import { useAuth } from '../Context/AuthContext';
+import {User,Users} from './Users';
 
 function SignUpScreen() {
   const [username, setUsername] = useState('');
@@ -15,6 +17,10 @@ function SignUpScreen() {
   const [isValidLastName, setIsValidLastName] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(false);
   const [isValidForm,setIsValidForm] = useState(false);
+
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn, authUsers, setAuthUsers} = useAuth();
+
+
  
   useEffect(() => {
     if(isValidUsername && isValidFirstName && isValidLastName && isValidPassword){
@@ -52,9 +58,12 @@ function SignUpScreen() {
   }
 
   const signUp = (e) => {
-     e.preventDefault();//Add tests for this function
+     e.preventDefault();
      createUserWithEmailAndPassword(auth,username,password)
      .then(() => {
+        setAuthUser(new User(firstname,username,lastname,password));
+        setAuthUsers(authUsers.addUser(authUser));
+        setIsLoggedIn(true);
       })
     .catch((error) => {
       console.log(error);
