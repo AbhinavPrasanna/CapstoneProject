@@ -108,7 +108,6 @@ test('Password Regex works correctly with valid passwords', () => {
 });
 test('Password Regex works correctly with invalid passwords', () => {
     InvalidPasswords.forEach((password) => {
-        console.log(password)
         expect(validPassword.test(password)).toBeFalsy();
         });
 });

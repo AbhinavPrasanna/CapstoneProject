@@ -22,7 +22,6 @@ class Users{
     }
     
     addUser(user){
-        console.log(user);
         this.listOfUsers.push(user);
     }
 
