@@ -66,6 +66,40 @@
     letter-spacing: 0.6px;
 
 }
+.LogoutButtonLayout{
+    width: 148px;
+    height: 74px;
+    flex-shrink: 0;
+}
+.LogoutButtonStyle{
+    fill: #0702EF;
+}
+.LogoutTextLayout{
+    display: flex;
+    width: 126px;
+    height: 59px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.LogoutTextTypography{
+    color: #FFF;
+    font-family: Baloo 2;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 32px */
+    letter-spacing: 0.8px;
+}
+.ImageLayout{
+    width: 100px;
+    height: 89px;
+    flex-shrink: 0;
+}
+.ImageStyle{
+    border-radius: 232px;
+
+}
 .TransparentButton {
     background: transparent;
     border: none;

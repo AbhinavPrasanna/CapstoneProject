@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 import { validEmail, validPassword } from '../utils/Regex';
 import {auth} from '../utils/Firebase.js';
 import { signInWithEmailAndPassword , } from 'firebase/auth';
@@ -7,6 +8,7 @@ import './Stylesheets/Logos.css'
 import './Stylesheets/FormSubmission.css'
 
 function LoginScreen() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isValidUsername, setIsValidUsername] = useState(false);
@@ -41,6 +43,7 @@ function LoginScreen() {
     .then(() => {
       setAuthUser(authUsers.findUser(username));
       setIsLoggedIn(true);
+      navigate("/");
     })
    .catch((error) => {
      console.log(error);
