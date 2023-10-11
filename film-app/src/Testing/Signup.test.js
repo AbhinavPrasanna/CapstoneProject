@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
 import { render,fireEvent,screen } from '@testing-library/react';
 import SignUpScreen from '../Components/SignUpScreen';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signUp } from ""; // Replace with the actual import path
+import { initializeTestApp, auth } from "@firebase/rules-unit-testing";
 
 jest.mock('../Context/AuthContext', () => ({
     useAuth: () => ({
@@ -13,6 +16,15 @@ jest.mock('../Context/AuthContext', () => ({
       setAuthUsers: jest.fn(),
     }),
   }));
+
+  const app = initializeTestApp({
+    projectId: "your-project-id",
+    auth,
+  });
+
+  const assert = require()
+  
+  const { test } = require("@jest/globals");
 
 
 const correctuser ={
@@ -234,3 +246,30 @@ test('SignUp Screen shows disabled when the form is invalid with incorrect first
     expect(signUpSubmitButton).toBeInTheDocument();
     expect(signUpSubmitButton).toBeDisabled();
 });
+test("signUp should create a user", async () => {
+    const username = "testuser";
+    const password = "testpassword";
+    const firstname = "John";
+    const lastname = "Doe";
+  
+    // Mock the createUserWithEmailAndPassword function
+    const createUserWithEmailAndPasswordMock = jest.fn(() => Promise.resolve());
+  
+    // Replace the actual function with the mock
+    createUserWithEmailAndPassword.mockImplementation(createUserWithEmailAndPasswordMock);
+  
+    const setAuthUser = jest.fn();
+    const setAuthUsers = jest.fn();
+    const setIsLoggedIn = jest.fn();
+    const navigate = jest.fn();
+  
+    // Call the signUp function
+    await signUp({
+      preventDefault: jest.fn(),
+    });
+  
+    // Assertions
+    expect(createUserWithEmailAndPasswordMock).toHaveBeenCalledWith(auth, username, password);
+    expect(setAuthUser).toHaveBeenCalledWith(new User(firstname, username, lastname, password));
+    // Add more assertions as needed
+  });

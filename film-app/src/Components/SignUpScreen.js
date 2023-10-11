@@ -1,13 +1,19 @@
 import React,{useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import { validEmail, validFirstName, validLastName, validPassword } from '../utils/Regex';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
-import {auth} from '../utils/Firebase.js';
+import { auth} from '../utils/Firebase.js';
+
 import './Stylesheets/Logos.css'
 import './Stylesheets/FormSubmission.css'
+
 import { useAuth } from '../Context/AuthContext';
 import {User,Users} from './Users';
 
+
 function SignUpScreen() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
@@ -64,6 +70,8 @@ function SignUpScreen() {
         setAuthUser(new User(firstname,username,lastname,password));
         setAuthUsers(authUsers.addUser(authUser));
         setIsLoggedIn(true);
+        console.log(auth);
+        navigate("/");
       })
     .catch((error) => {
       console.log(error);
